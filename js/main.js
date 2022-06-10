@@ -1,7 +1,9 @@
 // const producao = document.getElementById('producao');
 const robotron = document.getElementById('robotron');
 
-robotron.addEventListener('click',dizOi)
+robotron.addEventListener('click',()=>{
+  dizOi()
+})
 
 
 function dizOi() {
@@ -10,3 +12,4 @@ function dizOi() {
     console.log("oi")
   }
 }
+
