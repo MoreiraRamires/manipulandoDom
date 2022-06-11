@@ -1,15 +1,23 @@
 // const producao = document.getElementById('producao');
 const robotron = document.getElementById('robotron');
+let contador= document.querySelector('#controle-contador-braco');
+const subtrair = document.querySelector('#subtrair');
 
-robotron.addEventListener('click',()=>{
-  dizOi()
-})
+subtrair.addEventListener("click",subtracao)
 
+function subtracao (){
+  let contador= document.querySelector('#controle-contador-braco');
 
-function dizOi() {
-  console.log("ola");
-  for (let i =0; i<5;i++){
-    console.log("oi")
-  }
+  console.log("cheguei")
+
+  contador.value="99"
+
+ 
+
 }
+
+
+
+
+
 
