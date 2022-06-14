@@ -1,23 +1,23 @@
 // const producao = document.getElementById('producao');
 const robotron = document.getElementById('robotron');
-let contador= document.querySelector('#controle-contador-braco');
+let braco = document.querySelector('#controle-contador-braco');
+
 const subtrair = document.querySelector('#subtrair');
+const somar = document.querySelector('#somar');
 
-subtrair.addEventListener("click",subtracao)
+subtrair.addEventListener("click",()=>{
+  manipulaDados("subtrair")
+})
 
-function subtracao (){
-  let contador= document.querySelector('#controle-contador-braco');
+somar.addEventListener("click",()=>{
+  manipulaDados("somar")
+})
 
-  console.log("cheguei")
+function manipulaDados(operacao){
 
-  contador.value="99"
-
- 
-
+  if(operacao ==="subtrair"){
+    braco.value = parseInt(braco.value) -1 
+  } else if (operacao ==="somar") {
+    braco.value = parseInt(braco.value) +1 
+  }
 }
-
-
-
-
-
-
