@@ -2,7 +2,7 @@
 const robotron = document.getElementById('robotron');
 const controlesAjuste = document.querySelectorAll('.controle-ajuste');
 const pecaTitulo= document.querySelectorAll('.peca-titulo')
-let braco = document.querySelectorAll('.controle input');
+let braco = document.querySelector('.controle input');
 
 
 controlesAjuste.forEach(
