@@ -1,23 +1,52 @@
 // const producao = document.getElementById('producao');
 const robotron = document.getElementById('robotron');
-let contador= document.querySelector('#controle-contador-braco');
-const subtrair = document.querySelector('#subtrair');
+const controlesAjuste = document.querySelectorAll('.controle-ajuste');
+const pecaTitulo= document.querySelectorAll('.peca-titulo')
+let braco = document.querySelector('.controle input');
 
-subtrair.addEventListener("click",subtracao)
 
-function subtracao (){
-  let contador= document.querySelector('#controle-contador-braco');
+controlesAjuste.forEach(
+  (element)=>{
+    element.addEventListener("click",()=>{
+      manipulaDados(element.textContent)
+    })
+  }
+)
 
-  console.log("cheguei")
 
-  contador.value="99"
+pecaTitulo.forEach(
 
+  (element)=>{
+    let nomePeca = element.innerHTML
+    nomePeca= nomePeca.toLowerCase()
+    nomePeca= nomePeca.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
+    element.setAttribute('id',`controle-contador-${nomePeca}`) //label
+
+
+    
+  
  
+  }
+)
 
+
+
+
+
+// input.createAttribute("id")
+// input.setAttribute('MeuID')
+
+
+
+
+
+
+function manipulaDados(operacao){
+
+  if(operacao ==="-"){
+    braco.value = parseInt(braco.value) -1 
+  } else if (operacao ==="+"){
+    braco.value = parseInt(braco.value) +1 
+  } 
 }
-
-
-
-
-
-
