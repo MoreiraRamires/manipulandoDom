@@ -1,8 +1,8 @@
 // const producao = document.getElementById('producao');
 const robotron = document.getElementById('robotron');
-let braco = document.querySelector('.controle input');
 const controlesAjuste = document.querySelectorAll('.controle-ajuste');
 const pecaTitulo= document.querySelectorAll('.peca-titulo')
+let braco = document.querySelectorAll('.controle input');
 
 
 controlesAjuste.forEach(
@@ -12,6 +12,8 @@ controlesAjuste.forEach(
     })
   }
 )
+
+
 pecaTitulo.forEach(
 
   (element)=>{
@@ -20,14 +22,20 @@ pecaTitulo.forEach(
     nomePeca= nomePeca.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
     element.setAttribute('id',`controle-contador-${nomePeca}`) //label
+
+
     
-
-
-    // console.log(element)
+  
  
   }
 )
 
+
+
+
+
+// input.createAttribute("id")
+// input.setAttribute('MeuID')
 
 
 
@@ -40,7 +48,5 @@ function manipulaDados(operacao){
     braco.value = parseInt(braco.value) -1 
   } else if (operacao ==="+"){
     braco.value = parseInt(braco.value) +1 
-  } else{
-    alert("oi")
-  }
+  } 
 }
