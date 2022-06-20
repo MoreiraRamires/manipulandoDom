@@ -41,10 +41,10 @@ controlesAjuste.forEach(
     
     element.addEventListener("click",(event)=>{
 
-      let controle = event.target
+      let controle = event.target;
       
-      manipulaDados(controle.dataset.controle,controle.parentNode)
-
+      manipulaDados(controle.dataset.controle,controle.parentNode);
+      atualizaEstatistica(controle.dataset.peca,);
 
     })
   }
@@ -52,19 +52,27 @@ controlesAjuste.forEach(
 
 function manipulaDados(operacao,controle){
   let peca = controle.querySelector('[data-contador]');
-  console.log(controle)
 
 
   if(operacao ==="-"){
     peca.value = parseInt(peca.value) -1 
-    if(peca.value <=0){
+    if(peca.value <0){
       peca.value = 0
-      alert("n")
+      alert("Não aceitamos números negativos")
     }
   } else if (operacao ==="+"){
     peca.value = parseInt(peca.value) +1 
   } 
 
 
+}
+
+function atualizaEstatistica(peca){
+
+  estatistica.forEach((element)=>{
+
+    element.textContent= parseInt(element.textContent)+pecas[peca][element.dataset.estatistica]
+
+  })
 }
 
