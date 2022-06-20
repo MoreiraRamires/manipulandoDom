@@ -1,5 +1,6 @@
 // const producao = document.getElementById('producao');
 const controlesAjuste = document.querySelectorAll('[data-controle]');
+const estatistica = document.querySelectorAll('[data-estatistica]');
 
 const pecas = {
   "bracos": {
