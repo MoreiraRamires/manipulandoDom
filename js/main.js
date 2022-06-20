@@ -1,7 +1,5 @@
 // const producao = document.getElementById('producao');
-const robotron = document.getElementById('robotron');
-const controlesAjuste = document.querySelectorAll('.controle-ajuste');
-const pecaTitulo= document.querySelectorAll('.peca-titulo')
+const controlesAjuste = document.querySelectorAll('[data-controle]');
 
 
 controlesAjuste.forEach(
@@ -11,29 +9,27 @@ controlesAjuste.forEach(
 
       let controle = event.target
       
-      manipulaDados(controle.textContent,controle.parentNode)
+      manipulaDados(controle.dataset.controle,controle.parentNode)
 
 
     })
   }
 )
 
-// input.createAttribute("id")
-// input.setAttribute('MeuID')
-
-
-
-
-
-
 function manipulaDados(operacao,controle){
-  let peca = controle.querySelector('.controle-contador');
+  let peca = controle.querySelector('[data-contador]');
   console.log(controle)
 
 
   if(operacao ==="-"){
     peca.value = parseInt(peca.value) -1 
+    if(peca.value <=0){
+      peca.value = 0
+      alert("n")
+    }
   } else if (operacao ==="+"){
     peca.value = parseInt(peca.value) +1 
   } 
+
+
 }
